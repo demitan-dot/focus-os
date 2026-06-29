@@ -16,12 +16,12 @@ GTD-based daily time management app with AI-powered task classification, focus t
 
 **Option A — Deploy to Vercel (1 click)**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/focus-os)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/demitan-dot/focus-os)
 
 **Option B — Run locally**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/focus-os
+git clone https://github.com/demitan-dot/focus-os
 cd focus-os
 npm install
 npm run dev
