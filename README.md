@@ -1,32 +1,72 @@
-# React + TypeScript + Vite
+# Focus OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+GTD-based daily time management app with AI-powered task classification, focus timer, and auto-generated standup reports.
 
-Currently, two official plugins are available:
+**Core loop:** Plan → Focus → Inbox (anytime) → Review → Standup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Plan** — dump all tasks in free text, AI classifies by context and priority (P0/P1/P2)
+- **Focus** — one task at a time with live timer, interrupt tracking, 2-minute rule flag
+- **Inbox** — capture anything instantly (floating button or Cmd+I), clarify later
+- **Review** — daily / weekly / monthly review with 7 selectable modules
+- **Standup** — AI generates next-day morning standup in SMART format + MIT recommendations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Quick Start
 
-## Expanding the Oxlint configuration
+**Option A — Deploy to Vercel (1 click)**
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/focus-os)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+**Option B — Run locally**
+
+```bash
+git clone https://github.com/YOUR_USERNAME/focus-os
+cd focus-os
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open `http://localhost:5173` and add your Claude API key in Settings.
+
+## Getting a Claude API Key
+
+1. Go to [console.anthropic.com](https://console.anthropic.com)
+2. Create an account and add billing
+3. Generate an API key under **API Keys**
+4. Paste it in Focus OS → Settings
+
+Your key is stored **only in your browser's localStorage** — never sent anywhere except Anthropic's API directly.
+
+## GTD Workflow
+
+| GTD Step | Focus OS |
+|----------|----------|
+| Capture | Inbox — one line, instant |
+| Clarify | Inbox triage — actionable? 2min? today / someday / delete |
+| Organize | Plan — AI classifies + prioritizes |
+| Reflect | Review — daily / weekly / monthly |
+| Engage | Focus — one task, live timer |
+
+## Review Modules
+
+| Module | Best for |
+|--------|----------|
+| GTD Check | Daily — inbox cleared? MIT confirmed? |
+| Success Journal | Daily — what went well (builds momentum) |
+| Mistake Log | Daily — root-cause learning |
+| Gratitude | Daily — 3 things (positive psychology) |
+| 4L Review | Weekly — Liked / Learned / Lacked / Longed for |
+| Stop·Start·Continue | Weekly/Monthly — behavior change |
+| Free Write | Any — unstructured reflection |
+
+## Data Privacy
+
+All data stays in your browser's localStorage. Nothing is uploaded anywhere. Your Claude API key never passes through any intermediate server.
+
+## Tech Stack
+
+- React 18 + TypeScript + Vite
+- Tailwind CSS v3
+- Claude API (Haiku for task classification, Sonnet for review generation)
+- localStorage (no backend, no database)
